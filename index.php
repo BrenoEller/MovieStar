@@ -5,7 +5,7 @@
 
     ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +52,7 @@
     </div>
 
     <footer id="footer">
-        <div class="social-container">
+        <div id="social-container">
             <ul>
                 <li>
                     <a href="#"><i class="fab fa-facebook-square"></i></a>
@@ -67,7 +67,7 @@
         </div>
         <div id="footer-links-container">
             <ul>
-                <li>
+                <li id="list-footer">
                     <a href="#">Adicionar filme</a>
                     <a href="#">Adicionar crítica</a>
                     <a href="#">Entrar / Registrar</a>
