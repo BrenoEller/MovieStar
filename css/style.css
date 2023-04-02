@@ -1,3 +1,7 @@
 body {
     background-color: #CCC;
 }
+
+#search-form {
+    display: flex;
+}
