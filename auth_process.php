@@ -25,17 +25,36 @@
 
                     if($userDAO->findByEmail($email) === false) {
 
-                        echo "nenhum usuario foi encontrado";
+                        $user = new User();
+
+                        $UserToken = $user->generateToken();
+                        $finalPassword = $user->generatePassword($password);
+
+                        $user->name = $name;
+                        $user->lastname = $lastname;
+                        $user->email = $email;
+                        $user->password = $finalPassword;
+                        $user->token = $UserToken;
+
+                        $auth = true;
+
+                        $userDAO->create($user, $auth);
+
                     } else {
+
                         $message->setMessage("Este email já está sendo utilizado.", "error", "back");
+
                     }
                 } else{
+
                     $message->setMessage("As senhas não são iguais!", "error", "back");
+
                 }
 
         } else{
 
             $message->setMessage("Por favor, preencha todos os campos.", "error", "back");
+
         }
 
         } else if($type === "login") {
