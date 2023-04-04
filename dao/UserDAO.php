@@ -2,7 +2,7 @@
 
     require_once("models/User.php");
 
-    abstract class UserDAO implements UserDAOInterface {
+    class UserDAO implements UserDAOInterface {
 
         private $conn;
         private $url;
@@ -11,6 +11,10 @@
             $this->conn = $conn;
             $this->url = $url;
         }
+
+        public function destroyToken() {
+            // adicione a implementação do método aqui
+          }
 
         public function buildUser($data) {
 
@@ -49,6 +53,27 @@
         }
         public function findByEmail($email){
 
+            if($email != "") {
+
+                $stmt = $this->conn->prepare("SELECT * FROM users WHERE email = :email");
+
+                $stmt->bindParam(":email", $email);
+
+                $stmt->execute();
+
+                if($stmt->rowCount() > 0) {
+
+                    $data = $stmt->fetch();
+                    $user = $this->buildUser($data);
+
+                    return $user;
+                } else{
+                    return false;
+                }
+
+            } else{
+                return false;
+            }
         } 
 
         public function findByToken($token){
