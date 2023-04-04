@@ -19,12 +19,12 @@
                             <label for="password">Senha</label>
                             <input type="password" class="form-control" placeholder="Digite sua senha" id="password" name="password">
                         </div>
-                        <input type="submite" class="btn card-btn" value="Entrar">
+                        <input type="submit" class="btn card-btn" value="Entrar">
                     </form>
                 </div>
                 <div class="col-md-4" id="register-container">
                     <h2>Criar conta</h2>
-                    <form action="" method="POST">
+                    <form action="<?= $BASE_URL ?>auth_process.php" method="POST">
                         <input type="hidden" value="register" name="type">
                         <div class="form-group">
                             <label for="email">E-mail</label>
@@ -46,7 +46,7 @@
                             <label for="confirmpassword">Confirme sua senha</label>
                             <input type="password" class="form-control" placeholder="Confirme sua senha" id="confirmpassword" name="confirmpassword">
                         </div>
-                        <input type="submite" class="btn card-btn" value="Registrar">
+                        <input type="submit" class="btn card-btn" value="Registrar">
                     </form>
                 </div>
             </div>
