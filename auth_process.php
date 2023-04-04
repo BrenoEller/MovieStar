@@ -6,23 +6,26 @@
     require_once("dao/UserDAO.php");
     require_once("models/Message.php");
 
-    $message = new Message($BASE_URL)
+    $message = new Message($BASE_URL);
     $type = filter_input(INPUT_POST, "type");
 
-    if("type" === register) {
+    if($type === "register") {
 
-        $name =  $type = filter_input(INPUT_POST, "name");
-        $lastname =  $type = filter_input(INPUT_POST, "lastname");
-        $email =  $type = filter_input(INPUT_POST, "email");
-        $password =  $type = filter_input(INPUT_POST, "password");
-        $confirmpassword =  $type = filter_input(INPUT_POST, "confirmpassword");
+        $name = filter_input(INPUT_POST, "name");
+        $lastname = filter_input(INPUT_POST, "lastname");
+        $email = filter_input(INPUT_POST, "email");
+        $password = filter_input(INPUT_POST, "password");
+        $confirmpassword = filter_input(INPUT_POST, "confirmpassword");
+        
 
         if($name && $lastname && $password && $email) {
+                // TESTE
+        } else{
 
-        } else {
-            $message->setMessage("Por favor, preencha todos os campos.", "error", "back")
+            $message->setMessage("Por favor, preencha todos os campos.", "error", "back");
         }
 
-    } else if("type" === login) {
+        } else if($type === "login") {
 
-    }
+    } 
+
