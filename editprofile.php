@@ -48,6 +48,24 @@
                         </div>
                     </div>
             </form>
+            <div class="row" id="change-password-container">
+                <div class="col-md-4">
+                    <h2>Alterar senha</h2>
+                    <p class="page-description">Digite sua nova senha e confirme</p>
+                    <form action="<?= $BASE_URL ?>user_process.php" method="POST">
+                        <input type="hidden" name="type" value="changepassword">
+                        <div class="form-group">
+                            <label for="password">Nova senha</label>
+                            <input type="text" class="form-control" id="password" name="password" placeholder="Digite sua nova senha">
+                        </div>                       
+                        <div class="form-group">
+                                <label for="confirmpassword">Confirme sua senha</label>
+                                <input type="text" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme sua nova senha">
+                        </div>
+                        <input type="submit" class="btn form-btn" value="Altera senha">
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
