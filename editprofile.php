@@ -14,7 +14,7 @@
     }
 ?>
 
-    <div id="main-container" class="container-fluid">
+    <div id="main-container" class="container-fluid edit-profile-page">
         <div class="col-md-12"> 
             <form action="<?= $BASE_URL ?>user_process.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="type" value="update">
@@ -23,27 +23,27 @@
                         <h1><?= $fullName ?></h1>
                         <p class="page-description">Altere seus dados no formulário abaixo:</p>
                         <div class="form-group">
-                            <label for="name">Nome</label>
+                            <label for="name">Nome:</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" value="<?= $userData->name ?>">
                         </div>
                         <div class="form-group">
-                            <label for="lastname">Sobrenome</label>
+                            <label for="lastname">Sobrenome:</label>
                             <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Digite seu sobrenome" value="<?= $userData->lastname ?>">
                         </div>
                         <div class="form-group">
-                            <label for="email">email</label>
+                            <label for="email">email:</label>
                             <input type="text" class="form-control disabled" id="email" name="email" placeholder="Digite seu email" value="<?= $userData->email ?>" readonly>
                         </div>
-                        <input type="submit" class="btn form-btn" value="Alterar">
+                        <input type="submit" class="btn card-btn margin-top-30px" value="Alterar">
                     </div>
                     <div class="col-md-4">
-                        <div class="profile-image-container" style="background-image: url('<?= $BASE_URL ?>imagens/users/<?= $userData->image ?>')"></div>
-                        <div class="form-group">
-                            <label for="image">Foto</label>
+                        <div id="profile-image-container" style="background-image: url('<?= $BASE_URL ?>imagens/users/<?= $userData->image ?>')"></div>
+                        <div class="form-group" style="display: flex; flex-direction: column;">
+                            <label for="image">Foto:</label>
                             <input type="file" class="form-control-file" name="image">
                         </div>
                         <div class="form-group">
-                            <label for="bio">Sobre você</label>
+                            <label for="bio">Sobre você:</label>
                             <textarea class="form-control" name="bio" id="bio" rows="5" placeholder="Conte sobre você!"><?= $userData->bio ?></textarea>
                         </div>
                     </div>
@@ -55,14 +55,14 @@
                     <form action="<?= $BASE_URL ?>user_process.php" method="POST">
                         <input type="hidden" name="type" value="changepassword">
                         <div class="form-group">
-                            <label for="password">Nova senha</label>
+                            <label for="password">Nova senha:</label>
                             <input type="text" class="form-control" id="password" name="password" placeholder="Digite sua nova senha">
                         </div>                       
                         <div class="form-group">
-                                <label for="confirmpassword">Confirme sua senha</label>
+                                <label for="confirmpassword">Confirme sua senha:</label>
                                 <input type="text" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme sua nova senha">
                         </div>
-                        <input type="submit" class="btn form-btn" value="Altera senha">
+                        <input type="submit" class="btn card-btn margin-top-30px" value="Altera senha">
                     </form>
                 </div>
             </div>

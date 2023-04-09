@@ -204,3 +204,45 @@
     gap: 30px;
     flex-direction: column;
 }
+
+#profile-image-container {
+    width: 150px;
+    height: 150px;
+    border: 6px solid #F5C518;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
+    margin: 15px auto;
+}
+
+.page-description {
+    color: #999;
+}
+
+#bio {
+    max-width: 400px;
+}
+
+.form-control.disabled {
+    background-color: #9b9a9a;
+}
+
+#change-password-container {
+    margin-top: 30px;
+}
+
+.margin-top-30px {
+    margin-top: 30px;
+}
+
+.edit-profile-page .card-btn {
+    width: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.col-md-4:nth-child(2) {
+    width: auto;
+}
