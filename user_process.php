@@ -37,13 +37,18 @@
 
                 if(in_array($image, $jpgArray)){
 
-                    $imagaFile = imagecreatefromjpeg($image["tmp_name"]);
+                    $imageFile = imagecreatefromjpeg($image["tmp_name"]);
 
                 } else {
 
+                    $imageFile = imagecreatefrompng($image["tmp_name"]);
                 }
 
                 $imageName = $user->imageGenerateName();
+
+                imagejpeg($imageFile, "./imagens/users/" . $imageName, 100);
+
+                $userData->image = $imageName;
 
             } else {
                 $message->setMessage("Tipo inválindo de imagem. Insira png, jpeg ou jpg", "error", "back");
