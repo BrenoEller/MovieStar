@@ -28,7 +28,26 @@
         $userData->bio = $bio;
 
         if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
-            print_r($_FILES); exit;
+            
+            $image = $_FILES["img"];
+            $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
+            $jpgArray = ["image/jpeg", "image/jpg"];
+
+            if(in_array($image["type"], $imageTypes)) {
+
+                if(in_array($image, $jpgArray)){
+
+                    $imagaFile = imagecreatefromjpeg($image["tmp_name"]);
+
+                } else {
+
+                }
+
+                $imageName = $user->imageGenerateName();
+
+            } else {
+                $message->setMessage("Tipo inválindo de imagem. Insira png, jpeg ou jpg", "error", "back");
+            }
         }
 
         $userDAO->update($userData);

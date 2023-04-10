@@ -40,3 +40,8 @@
         public function destroyToken();
         public function changePassword(User $user);
     }
+
+    public function imageGenerateName() {
+         
+        return bin2hex(random_bytes(60));
+    }
