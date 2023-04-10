@@ -27,6 +27,10 @@
         $userData->email = $email;
         $userData->bio = $bio;
 
+        if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
+            print_r($_FILES); exit;
+        }
+
         $userDAO->update($userData);
 
     } else if($type === "changepassword"){
