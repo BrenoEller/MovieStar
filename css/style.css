@@ -201,7 +201,7 @@
 
 #register-container form {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     flex-direction: column;
 }
 
