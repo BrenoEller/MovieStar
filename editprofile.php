@@ -56,11 +56,11 @@
                         <input type="hidden" name="type" value="changepassword">
                         <div class="form-group">
                             <label for="password">Nova senha:</label>
-                            <input type="text" class="form-control" id="password" name="password" placeholder="Digite sua nova senha">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua nova senha">
                         </div>                       
                         <div class="form-group">
                                 <label for="confirmpassword">Confirme sua senha:</label>
-                                <input type="text" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme sua nova senha">
+                                <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme sua nova senha">
                         </div>
                         <input type="submit" class="btn card-btn margin-top-30px" value="Altera senha">
                     </form>
