@@ -58,7 +58,26 @@
         $userDAO->update($userData);
 
     } else if($type === "changepassword"){
+  
+        $password = filter_input(INPUT_POST, "password");
+        $confirmpassword = filter_input(INPUT_POST, "confirmpassword");
+        $id = filter_input(INPUT_POST, "id");
 
+        if($password == $confirmpassword) {
+
+            $user = new User();
+
+            $finalPassword = $user->generatePassword($password);
+
+            $user->password = $finalPassword;
+            $user->id = $id;
+
+            $userDAO->changePassword($user);
+        } else{
+
+            $message->setMessage("As senhas não são iguais", "error", "back");
+
+        }
 
     } else{
 
