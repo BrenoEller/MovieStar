@@ -15,15 +15,18 @@
 
     $userData = $userDao->verifyToken();
 
-    if($type === "create" ) {
+    if($type === "create") {
 
         $title = filter_input(INPUT_POST, "title");
         $description = filter_input(INPUT_POST, "description");
         $trailer = filter_input(INPUT_POST, "trailer");
         $category = filter_input(INPUT_POST, "category");
         $length = filter_input(INPUT_POST, "length");
+      
 
         $movie = new Movie();
+
+       
 
         if(!empty($title) && !empty($description) && !empty($category)) {
 
@@ -32,6 +35,7 @@
             $movie->description = $description;
             $movie->category = $category;
             $movie->length = $length;
+            $movie->users_id = $userData->id;
 
             if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
                 $image = $_FILES["image"];
@@ -58,11 +62,7 @@
                 }
             }
 
-            print_r($_POST);
-            print_r($_FILES);
-            exit;
-
-            $movieDAO->create($movie);
+            $movieDao->create($movie);
 
         } else{
             $message->setMessage("Você precisa adicionar Título, descrição e categoria.", "error", "back");
