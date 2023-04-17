@@ -348,8 +348,9 @@ a {
 }
 
 .empty-list {
-    text-align: center;
+    margin-left: 20px;
     width: 100%;
-    font-weight: bold;
     font-size: 18px;
+    margin-top: 30px;
+    text-align: start;
 }
