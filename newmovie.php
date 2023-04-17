@@ -39,6 +39,8 @@
                         <option value="Comédia">Comédia</option>
                         <option value="Fantasia/ficção">Fantasia/ficção</option>
                         <option value="Romance">Romance</option>
+                        <option value="Corrida">Corrida</option>
+                        <option value="sitcom">sitcom</option>
                     <select/>
                 </div>
                 <div class="form-group">
