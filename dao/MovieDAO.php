@@ -19,14 +19,14 @@
             
             $user = new Movie();
       
-            $movie->id = $data["id"];
-            $movie->title = $data["title"];
-            $movie->description = $data["description"];
-            $movie->image = $data["image"];
-            $movie->trailer = $data["trailer"];
-            $movie->category = $data["category"];
-            $movie->length = $data["length"];
-            $movie->users_id = $data["users_id"];
+            $user->id = $data["id"];
+            $user->title = $data["title"];
+            $user->description = $data["description"];
+            $user->image = $data["image"];
+            $user->trailer = $data["trailer"];
+            $user->category = $data["category"];
+            $user->lenght = $data["lenght"];
+            $user->users_id = $data["users_id"];
       
             return $user;
         }
@@ -34,7 +34,7 @@
 
         }
         public function getLatestMovies() {
-
+            
         }
         public function getMoviesByCategory($category) {
 
