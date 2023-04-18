@@ -29,10 +29,10 @@
                     <td><a href="#" class="table-movie-title">Titulo</a></td>
                     <td><i class="fas fa-star"></i> 9</td>
                     <td class="actions-column">
-                        <a href="" class="edit-btn"><i class="far fa-edit"></i>Editar</a>
+                        <a href="" class="edit-btn"><i class="far fa-edit"></i> Editar</a>
                         <form action="">
                             <button type="submit" class="delete-btn">
-                                <i class="fas fa-times"></i>Deletar
+                                <i class="fas fa-times"></i> Deletar
                             </button>
                         </form>
                     </td>
