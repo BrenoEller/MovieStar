@@ -210,7 +210,8 @@ a {
     flex-direction: column;
 }
 
-#profile-image-container {
+#profile-image-container,
+.profile-image-container {
     width: 150px;
     height: 150px;
     border: 6px solid #F5C518;
@@ -218,6 +219,11 @@ a {
     background-size: cover;
     background-position: center;
     margin: 15px auto;
+}
+
+.profile-image-container {
+    width: 70px;
+    height: 70px;
 }
 
 .page-description {
@@ -430,4 +436,64 @@ a {
     background-color: transparent;
     color: #DC3545;
     text-decoration: none;
+}
+
+.movie-container {
+    text-align: center;
+}
+
+.movie-details {
+    margin: 25px 0;
+}
+
+.pipe {
+    border: 1px solid #333;
+    margin: 0 10px;
+}
+
+#reviews-title {
+    margin-bottom: 25px;
+}
+
+#review-form-container {
+    background-color: #333;
+    padding: 20px;
+}
+
+#review-form-container select,
+#review-form-container textarea {
+    width: 50%;
+}
+
+#reviews-container {
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 4px solid #F5C518;
+}
+
+.review {
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+.author-details-container {
+    padding-top: 20px;
+}
+
+.author-name a {
+    color: #F5C518;
+}
+
+.comment-title {
+    color: #999;
+}
+
+.image-centralize {
+    width: 100%;
+    border: 5px solid #F5C518;
+}
+
+.container-image-review {
+    display: flex;
+    align-items: center;
 }

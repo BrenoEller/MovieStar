@@ -40,8 +40,8 @@
             <iframe src="<?= $movie->trailer ?>" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encryted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p><?= $movie->description ?></p>
         </div>
-        <div class="col-md-4">
-            <div class="movie-image-container" style="background-image: url('<?= $BASE_URL ?>imagens/movies/<?= $movie->image ?>');">
+        <div class="col-md-4 container-image-review">
+            <div class="movie-image-container image-centralize" style="background-image: url('<?= $BASE_URL ?>imagens/movies/<?= $movie->image ?>');">
 
             </div>
         </div>
@@ -80,11 +80,11 @@
             <div class="col-md-12 review">
                 <div class="row">
                     <div class="col-md-1">
-                        <div class="profile-image-container review-image" style="background-image: url('<?= $BASE_URL ?>imagens/users/user.png)"></div>
+                        <div class="profile-image-container review-image" style="background-image: url('<?= $BASE_URL ?>imagens/users/user.png')"></div>
                     </div>
                     <div class="col-md-9 author-details-container">
                         <h4 class="author-name">
-                            <a href=""></a>
+                            <a href="">Nome do usuário</a>
                         </h4>
                         <p><i class="fas fa-star"></i> 9</p>
                     </div>
