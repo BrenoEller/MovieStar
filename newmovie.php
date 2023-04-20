@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <label for="trailer">Trailer:</label>
-                    <input type="text" class="form-control" id="trailer" name="trailer" placeholder="Insira o link do trailer">
+                    <input type="text" class="form-control" id="trailer" name="trailer" placeholder="Insira o link do trailer (o link deve ser incorporado)">
                 </div>
                 <div class="form-group">
                     <label for="description">Descrição do filme:</label>
