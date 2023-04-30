@@ -77,7 +77,7 @@
                             <?= $movie->description ?>
                         </textarea>
                     </div>
-                    <input type="submit" class="btn card-btn" value="Adicionar filme">
+                    <input type="submit" class="btn card-btn" value="Editar filme">
                 </form>
             </div>
             <div class="col-md-3">
