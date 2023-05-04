@@ -20,7 +20,12 @@
         }
     } else {
 
-        $message->setMessage("Usuário não encontrado", "error", "index.php");
+        $userData = $userDao->findById($id);
+
+        if(!$userData) {
+
+            $message->setMessage("Usuário não encontrado", "error", "index.php");
+        }
     }
 ?>
 
