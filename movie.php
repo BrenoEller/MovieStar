@@ -1,6 +1,7 @@
 <?php 
     require_once("templates/header.php");
     require_once("dao/MovieDAO.php");
+    require_once("dao/ReviewDAO.php");
     require_once("models/Movie.php");
 
     $userDao = new UserDao($conn, $BASE_URL);
@@ -11,6 +12,7 @@
     $movie;
 
     $movieDao = new MovieDAO($conn, $BASE_URL);
+    $reviewDao = new ReviewDAO($conn, $BASE_URL);
 
     if(empty($id)) {
 
@@ -24,6 +26,8 @@
             $message->setMessage("O filme não foi encontrado", "error", "index.php");
         }
     }
+
+    $movieReview = $reviewDao->getMoviesReview($id);
 ?>
 
 <div id="main-container" class="container-fluid">
@@ -76,24 +80,12 @@
                     <input type="submit" class="btn card-btn" value="Enviar comentário">
                 </form>
             </div>
-
-            <div class="col-md-12 review">
-                <div class="row">
-                    <div class="col-md-1">
-                        <div class="profile-image-container review-image" style="background-image: url('<?= $BASE_URL ?>imagens/users/user.png')"></div>
-                    </div>
-                    <div class="col-md-9 author-details-container">
-                        <h4 class="author-name">
-                            <a href="">Nome do usuário</a>
-                        </h4>
-                        <p><i class="fas fa-star"></i> 9</p>
-                    </div>
-                    <div class="col-md-12">
-                        <p class="comment-title">Comentário:</p>
-                        <p>Este é o comentário do usuário</p>
-                    </div>
-                </div>
-            </div>
+            <?php foreach($movieReview as $review): ?>
+                <?php require("templates/user_review.php") ?>
+            <?php endforeach; ?>
+            <?php if(count($movieReview) == 0): ?>
+                <p class="empty-list">Não há comentários para este filme.</p>
+            <?php endif; ?>
         </div>
     </div>
 </div>
