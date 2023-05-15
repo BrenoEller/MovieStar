@@ -541,3 +541,131 @@ a {
 .added-movies-container .movie-card {
     width: 31%;
 }
+
+#search-result {
+    color: #F5C518;
+}
+
+@media(max-width: 1500px) {
+
+    #search-form {
+        width: 30%;
+    }
+}
+
+@media(max-width: 1060px) {
+
+    #search-form {
+        width: 20%;
+    }    
+}
+
+@media(max-width: 950px) {
+
+    .movie-card {
+        width: 30%;
+    }
+}
+
+@media(max-width: 800px) {
+
+    #review-form-container select,
+    #review-form-container textarea {
+        width: 100%;
+    }
+}
+
+@media(max-width: 620px) {
+
+    .movie-container iframe {
+        max-width: 100% !important;
+    }
+}
+
+@media(max-width: 450px) {
+
+    #main-container {
+        padding: 20px;
+    }
+
+    #search-form {
+        width: 100%;
+        margin-left: 0;
+        margin: 0 10px;
+    }
+
+    #search-form .form-control {
+        width: 85%;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .movie-container {
+        padding: 0 15px;
+    }
+
+    .movie-card {
+        width: 100%;
+    }
+
+    .movie-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .movie-details span {
+        padding-bottom: 8px;
+    }
+
+    .pipe {
+        display: none;
+    }
+
+    #reviews-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .empty-list {
+        margin-top: 20px;
+    }
+
+    .msg {
+        width: 90%;
+    }
+
+    .review {
+        padding: 0 15px;
+    }
+
+    #movies-dashboard { 
+        padding: 0;
+    }
+
+    .actions-column {
+        width: 140px;
+    }
+
+    .edit-btn { 
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .movie-image-container {
+        margin-top: 1rem;
+    }
+
+    .fas.fa-bars {
+        color: #F5C518;
+    }
+}
+
+
+
+
+
+
+
