@@ -29,31 +29,24 @@
 
         if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
             
-            $image = $_FILES["img"];
             $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
-            $jpgArray = ["image/jpeg", "image/jpg"];
-
-            if(in_array($image["type"], $imageTypes)) {
-
-                if(in_array($image, $jpgArray)){
-
-                    $imageFile = imagecreatefromjpeg($image["tmp_name"]);
-
-                } else {
-
-                    $imageFile = imagecreatefrompng($image["tmp_name"]);
+            if(in_array($_FILES["image"]["type"], $imageTypes)) {
+                $imageFile = null;
+                if($_FILES["image"]["type"] == "image/png"){
+                    $imageFile = imagecreatefrompng($_FILES["image"]["tmp_name"]);
+                } else if($_FILES["image"]["type"] == "image/jpeg" || $_FILES["image"]["type"] == "image/jpg") {
+                    $imageFile = imagecreatefromjpeg($_FILES["image"]["tmp_name"]);
                 }
-
-                $imageName = $user->imageGenerateName();
-
-                imagejpeg($imageFile, "./imagens/users/" . $imageName, 100);
-
-                $userData->image = $imageName;
-
+                if($imageFile) {
+                    $imageName = $user->imageGenerateName();
+                    imagejpeg($imageFile, "./imagens/users/" . $imageName, 100);
+                    $userData->image = $imageName;
+                } else {
+                    $message->setMessage("Tipo inválido de imagem. Insira png, jpeg ou jpg", "error", "back");
+                }
             } else {
-                $message->setMessage("Tipo inválindo de imagem. Insira png, jpeg ou jpg", "error", "back");
+                $message->setMessage("Tipo inválido de imagem. Insira png, jpeg ou jpg", "error", "back");
             }
-        }
 
         $userDAO->update($userData);
 
@@ -85,3 +78,4 @@
         $message->setMessage("Informações inválidas", "error", "index.php");
 
     }
+}
