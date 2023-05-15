@@ -16,9 +16,7 @@
 
         public function create(Review $review);
 
-        public function getMoviesReview($id); 
-
-        public function hasAlredyReviewed($id, $userId);
+        public function getMoviesReview($id);
 
         public function getRatings($id);
     }
