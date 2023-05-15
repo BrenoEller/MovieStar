@@ -30,21 +30,28 @@
         if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
             
             $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
+            
             if(in_array($_FILES["image"]["type"], $imageTypes)) {
+
                 $imageFile = null;
                 if($_FILES["image"]["type"] == "image/png"){
+
                     $imageFile = imagecreatefrompng($_FILES["image"]["tmp_name"]);
                 } else if($_FILES["image"]["type"] == "image/jpeg" || $_FILES["image"]["type"] == "image/jpg") {
+
                     $imageFile = imagecreatefromjpeg($_FILES["image"]["tmp_name"]);
                 }
                 if($imageFile) {
+
                     $imageName = $user->imageGenerateName();
                     imagejpeg($imageFile, "./imagens/users/" . $imageName, 100);
                     $userData->image = $imageName;
                 } else {
+
                     $message->setMessage("Tipo inválido de imagem. Insira png, jpeg ou jpg", "error", "back");
                 }
             } else {
+
                 $message->setMessage("Tipo inválido de imagem. Insira png, jpeg ou jpg", "error", "back");
             }
 

@@ -569,6 +569,8 @@ a {
     .movie-card {
         width: 30%;
     }
+
+    
 }
 
 @media(max-width: 800px) {
@@ -591,6 +593,10 @@ a {
         width: 100%;
         margin-left: 0;
         margin: 0 10px;
+    }
+
+    .navbar-toggler {
+        margin: 10px;
     }
 }
 
